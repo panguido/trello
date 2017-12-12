@@ -1,0 +1,57 @@
+<legend>Proyecto</legend>
+<div class="form-inline" *ngIf="crud_operation.is_visible">
+  <label>id:</label>
+  <input class="form-control" type="number" placeholder="id..." [(ngModel)]="current_proyecto.id">
+  <label>Nombre:</label>
+  <input class="form-control" type="text" placeholder="Nombre..." [(ngModel)]="current_proyecto.nombre">
+  <label>Fecha_inicio:</label>
+  <input class="form-control" type="Date" placeholder="fecha..." [(ngModel)]="current_proyecto.fecha">
+  <label>num_persona:</label>
+  <input class="form-control" type="text" placeholder="num_persona..." [(ngModel)]="current_proyecto.num_persona">
+  <br>
+  <br>
+  <button class="btn btn-primary"(click)="save()">
+    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    Save
+  </button>
+  <button class="btn btn-default"(click)="crud_operation.is_visible = false">
+    <i class="fa fa-ban" aria-hidden="true"></i>
+    Cancel
+  </button>
+   <br>
+  <br>
+</div>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Id</th>
+    <th>nombre</th>
+    <th>Fecha_inicio</th>
+      <th>num_persona</th>
+
+    <th class="text-right">
+      <button class="btn btn-success" (click)="new()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+      <button class="btn btn-info" (click)="ngOnInit()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+    </th>
+  </tr>
+  <tr *ngFor="let row of data">
+    <td>{{row.id}}</td>
+    <td>{{row.nombre}}</td>
+    <td>{{row.fecha}}</td>
+    <td>{{row.num_persona}}</td>
+    
+    <td class="text-right">
+      <div *ngIf="!row.confirm">
+        <button class="btn btn-warning" (click)="edit(row)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+        <button class="btn btn-danger" (click)="row.confirm = true"><i class="fa fa-times" aria-hidden="true"></i></button>
+       
+      </div>
+      <div *ngIf="row.confirm">
+        <button class="btn btn-danger" (click)="row.confirm = false">Cancel</button>
+        <button class="btn btn-success" (click)="delete(row)">Confirm</button>
+      </div>
+    </td>
+  </tr>
+  <tr *ngIf="data.length == 0">
+    <td colspan="4" class="text-center">No data available</td>
+  </tr>
+</table>
