@@ -9,6 +9,13 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { TareasComponent } from './tareas/tareas.component';
 import { UsuarioDetalleComponent } from './usuario-detalle/usuario-detalle.component';
+import { ProyectoService  } from './proyecto.service';
+import { TareaService } from './tarea.service';
+import { TableroService  } from './tablero.service';
+import { UsuarioService } from './usuario.service';
+import { UsuarioDetalleService } from './usuario-detalle.service';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +31,7 @@ import { UsuarioDetalleComponent } from './usuario-detalle/usuario-detalle.compo
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UsuarioService,TableroService,ProyectoService,TareaService,UsuarioDetalleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
