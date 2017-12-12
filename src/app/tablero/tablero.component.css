@@ -1,4 +1,25 @@
-              .flex-container {
-  display: flex;
-  flex-wrap: wrap;
-                     }
+.container {
+ flex-direction: row;
+ margin: auto;
+ width: 50%;
+ position: relative;
+ padding: 10px;
+
+ display: inline-flex;
+
+ width: 500px;
+ height: 250px;
+}
+.flex-item {
+
+    background-color: cornflowerblue;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+body{padding:20px;}
+

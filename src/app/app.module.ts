@@ -15,6 +15,7 @@ import { TableroService  } from './tablero.service';
 import { UsuarioService } from './usuario.service';
 import { UsuarioDetalleService } from './usuario-detalle.service';
 import {AppRoutingModule  } from './app-routing.module';
+import { DragulaModule } from 'ng2-dragula';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {AppRoutingModule  } from './app-routing.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    DragulaModule
   ],
   providers: [UsuarioService,TableroService,ProyectoService,TareaService],
   bootstrap: [AppComponent]
