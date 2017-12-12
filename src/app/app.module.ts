@@ -14,7 +14,7 @@ import { TareaService } from './tarea.service';
 import { TableroService  } from './tablero.service';
 import { UsuarioService } from './usuario.service';
 import { UsuarioDetalleService } from './usuario-detalle.service';
-
+import {AppRoutingModule  } from './app-routing.module';
 
 
 @NgModule({
@@ -29,9 +29,10 @@ import { UsuarioDetalleService } from './usuario-detalle.service';
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
     HttpModule
   ],
-  providers: [UsuarioService,TableroService,ProyectoService,TareaService,UsuarioDetalleService],
+  providers: [UsuarioService,TableroService,ProyectoService,TareaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

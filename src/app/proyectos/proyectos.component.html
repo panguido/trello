@@ -1,13 +1,13 @@
 <legend>Proyecto</legend>
 <div class="form-inline" *ngIf="crud_operation.is_visible">
   <label>id:</label>
-  <input class="form-control" type="number" placeholder="id..." [(ngModel)]="current_proyecto.id">
+  <input class="form-control" type="number" placeholder="id..." [(ngModel)]="current_proyectos.id">
   <label>Nombre:</label>
-  <input class="form-control" type="text" placeholder="Nombre..." [(ngModel)]="current_proyecto.nombre">
+  <input class="form-control" type="text" placeholder="Nombre..." [(ngModel)]="current_proyectos.nombre">
   <label>Fecha_inicio:</label>
-  <input class="form-control" type="Date" placeholder="fecha..." [(ngModel)]="current_proyecto.fecha">
+  <input class="form-control" type="Date" placeholder="fecha..." [(ngModel)]="current_proyectos.fecha">
   <label>num_persona:</label>
-  <input class="form-control" type="text" placeholder="num_persona..." [(ngModel)]="current_proyecto.num_persona">
+  <input class="form-control" type="text" placeholder="num_persona..." [(ngModel)]="current_proyectos.num_persona">
   <br>
   <br>
   <button class="btn btn-primary"(click)="save()">
